@@ -14,6 +14,7 @@
         <module>gateway</module>
         <module>quartz</module>
         <module>starter</module>
+        <module>codeGenerate</module>
     </modules>
 
     <properties>

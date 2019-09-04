@@ -7,6 +7,7 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2
 
 #### 项目结构
 ```text
+├── codeGenerate: 代码生成项目
 ├── common: 作为项目公共依赖项目，放一些通用的工具类
 ├── framework: 示例项目，包含技术点的使用说明
 ├── gateway: API Gateway项目
@@ -29,3 +30,11 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2
 ├── domain：领域实体，包含业务   
 ```
    
+#### 使用代码生成
+项目：codeGenerate
+运行CodeGenerate类，根据提示输入信息，项目名称目前只支持一级项目，如 framework
+输入后会生成代码，可以生成entity、mapper、service、serviceImpl、controller
+
+使用场景：
+- 新建表：生成全部模版代码
+- 更新表：更新entity实体类
