@@ -147,7 +147,7 @@ public class ${entity} implements Serializable {
     }
 </#if>
 
-    public static class Fields extends BaseEntity.Fields{
+public static class Fields{
         <#list table.fields as field>
         public static final String ${field.propertyName} = "${field.name}";
         </#list>

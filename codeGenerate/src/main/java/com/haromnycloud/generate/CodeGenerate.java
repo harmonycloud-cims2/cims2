@@ -107,13 +107,12 @@ public class CodeGenerate {
         strategy.setCapitalMode(true);
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass(config.basePackage + ".common.database.base.BaseEntity");
         strategy.setEntityLombokModel(false);
         strategy.setInclude(config.tableName);
         strategy.setEntityBuilderModel(true);
         // 排除通用字段
-        strategy.setSuperEntityColumns("id", "is_deleted", "gmt_create", "creator", "gmt_modified", "modifier"
-                                        ,"ID", "IS_DELETED", "GMT_CREATE", "CREATOR", "GMT_MODIFIED", "MODIFIER");
+//        strategy.setSuperEntityColumns("id", "is_deleted", "gmt_create", "creator", "gmt_modified", "modifier"
+//                                        ,"ID", "IS_DELETED", "GMT_CREATE", "CREATOR", "GMT_MODIFIED", "MODIFIER");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setRestControllerStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
