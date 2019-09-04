@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
-    @Select("SELECT t.\"login_name\" FROM USERROLE.\"cims_user\" t where t.\"user_id\" = #{id}")
+    @Select("SELECT t.\"login_name\" FROM \"cims_user\" t where t.\"user_id\" = #{id}")
     String findById(@Param("id") int id);
 }
