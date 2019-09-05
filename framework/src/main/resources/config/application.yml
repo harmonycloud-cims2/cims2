@@ -11,6 +11,10 @@ spring:
     url: jdbc:oracle:thin:@10.1.10.131:30089:XE
     username: USERROLE
     password: USERROLE
+  #mongo
+  data:
+    mongodb:
+      uri: mongodb://10.1.11.112:33001/test
 
 management:
   endpoints:
