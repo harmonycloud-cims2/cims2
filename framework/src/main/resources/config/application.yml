@@ -3,7 +3,7 @@ project:
 
 spring:
   application:
-    name: test
+    name: framework
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -11,15 +11,34 @@ spring:
     url: jdbc:oracle:thin:@10.1.10.131:30089:XE
     username: USERROLE
     password: USERROLE
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driverClassName: oracle.jdbc.OracleDriver
+      pool:
+        initialSize: 5
+        maxActive: 10
+        minIdle: 5
+        maxWait: 10000
+        validationQuery: SELECT 1 FROM DUAL
+        testOnBorrow: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*/*.xml
+  typeAliasesPackage: com.harmonycloud.*.adapter.outbound.database.dataobject
+  global-config:
+    #    id-type: 0 # 数据库自增id
+    auto-set-db-type: true
+    db-column-underline: true
+    refresh-mapper: true
+    db-config:
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+    sql-inector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
 
 server:
-  port: 7739
+  port: 8360
