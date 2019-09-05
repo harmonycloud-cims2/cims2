@@ -22,14 +22,14 @@ spring:
         validationQuery: SELECT 1 FROM DUAL
         testOnBorrow: true
   #mongo
-  data:
-    mongodb:
-      uri: mongodb://10.1.11.112:33001/test
+#  data:
+#    mongodb:
+#      uri: mongodb://10.1.11.112:33001/test
 
 #mybatis-plus
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*/*.xml
-  typeAliasesPackage: com.harmonycloud.*.adapter.outbound.database.dataobject
+  typeAliasesPackage: com.harmonycloud.*.adapter.outbound.database.entity
   global-config:
     #    id-type: 0 # 数据库自增id
     auto-set-db-type: true
