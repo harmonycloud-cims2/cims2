@@ -54,3 +54,28 @@ apache:
     producer:
       producerGroup: Producer # 生产者的组名
     namesrvAddr: 10.10.101.67:9876 # NameServer地址
+
+
+sftp:
+  client:
+    protocol: sftp
+    # ip地址
+    host: 10.1.11.118
+    # 端口
+    port: 22
+    # 用户名
+    username: root
+    # 密码
+    password: 123456
+    # 根路径
+    root: /
+    # 密钥文件路径
+    privateKey:
+    # 密钥的密码
+    passphrase:
+    #
+    sessionStrictHostKeyChecking: no
+    # session连接超时时间
+    sessionConnectTimeout: 15000
+    # channel连接超时时间
+    channelConnectedTimeout: 15000
