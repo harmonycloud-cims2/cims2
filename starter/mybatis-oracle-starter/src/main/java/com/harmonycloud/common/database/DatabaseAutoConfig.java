@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,12 +31,4 @@ public class DatabaseAutoConfig {
         return new PaginationInterceptor();
     }
 
-    @Bean
-    public ServletRegistrationBean druidServlet() {
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
-        servletRegistrationBean.addUrlMappings("/database/*");
-//        servletRegistrationBean.addInitParameter("loginUsername","harmony");
-//        servletRegistrationBean.addInitParameter("loginPassword","12345678");
-        return servletRegistrationBean;
-    }
 }
