@@ -8,23 +8,15 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:oracle:thin:@10.1.10.131:30089:XE
-    username: USERROLE
-    password: USERROLE
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      driverClassName: oracle.jdbc.OracleDriver
-      pool:
-        initialSize: 5
-        maxActive: 10
-        minIdle: 5
-        maxWait: 10000
-        validationQuery: SELECT 1 FROM DUAL
-        testOnBorrow: true
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=Oracle;
+    driverClassName: org.h2.Driver
+    username: test
+    password: test
+    #schema: classpath:sql/data.sql
   #mongo
-#  data:
-#    mongodb:
-#      uri: mongodb://10.1.11.112:33001/test
+  data:
+    mongodb:
+      uri: mongodb://10.1.11.112:33001/test
 
 #mybatis-plus
 mybatis-plus:
