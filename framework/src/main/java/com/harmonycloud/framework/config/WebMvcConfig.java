@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Author: gjq
  * @Date: 2019/3/4 5:28 PM
  */
-@Configuration
+//@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Value("${project.default-view}")

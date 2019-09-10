@@ -8,10 +8,9 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=Oracle;
-    driverClassName: org.h2.Driver
-    username: test
-    password: test
+    url: jdbc:oracle:thin:@10.1.11.111:30089:XE
+    username: ROOT
+    password: 123456
     #schema: classpath:sql/data.sql
   #mongo
   data:
