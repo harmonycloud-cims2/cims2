@@ -3,14 +3,24 @@ project:
 
 spring:
   application:
-    name: test
+    name: framework
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:oracle:thin:@10.1.11.111:30089:XE
+    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
     username: ROOT
     password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driverClassName: oracle.jdbc.OracleDriver
+      pool:
+        initialSize: 5
+        maxActive: 10
+        minIdle: 5
+        maxWait: 10000
+        validationQuery: SELECT 1 FROM DUAL
+        testOnBorrow: true
     #schema: classpath:sql/data.sql
   #mongo
   data:
@@ -35,9 +45,6 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
 
-server:
-  port: 7739
-
 apache:
   rocketmq:
     consumer:
@@ -45,7 +52,6 @@ apache:
     producer:
       producerGroup: Producer # 生产者的组名
     namesrvAddr: 10.10.101.67:9876 # NameServer地址
-
 
 sftp:
   client:
@@ -70,3 +76,6 @@ sftp:
     sessionConnectTimeout: 15000
     # channel连接超时时间
     channelConnectedTimeout: 15000
+
+server:
+  port: 7739
