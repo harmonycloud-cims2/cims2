@@ -8,10 +8,22 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:oracle:thin:@10.1.11.111:30089:XE
-    username: ROOT
-    password: 123456
+#    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+#    username: ROOT
+#    password: 123456
     #schema: classpath:sql/data.sql
+    dynamic:
+      primary: write
+      datasource:
+        write:
+          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+          username: ROOT
+          password: 123456
+        read:
+          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+          username: XJOB
+          password: xjob
+
   #mongo
   data:
     mongodb:
