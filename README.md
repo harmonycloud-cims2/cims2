@@ -23,8 +23,10 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2
 |  ├──  message
 ├── outbound：出站适配器
 |  ├──  database：数据库操作
+|  ├──  mongo：mongo数据库操作
 |  ├──  message：消息发生
 |  ├──  rest：rest接口调用
+|  ├──  sftp：sftp接口调用
 |  ├──  webservice：webservice接口调用
 ├── config：项目配置类  
 ├── domain：领域实体，包含业务   
