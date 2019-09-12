@@ -1,6 +1,5 @@
 package com.harmonycloud.framework.adapter.inbound.message;
 
-import net.sf.jsqlparser.statement.select.Top;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -10,7 +9,6 @@ import org.apache.rocketmq.common.message.MessageExt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +24,7 @@ public class MessageConsumer  {
     /**
      * 消费者组名
      */
-    @Value("${apache.rocketmq.consumer.consumerGroup}")
+    @Value("${apache.rocketmq.consumer.PushConsumer}")
     private String consumerGroup;
 
     /**
@@ -39,13 +37,12 @@ public class MessageConsumer  {
      * 初始化RocketMq的监听信息，渠道信息
      */
     public void messageListener() {
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("AttendingGroup");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(consumerGroup);
 
         consumer.setNamesrvAddr(namesrvAddr);
         try {
             // 订阅Topic下Tag的消息,都订阅消息
-//            consumer.subscribe("TestYq", "test");
-            consumer.subscribe("AttendingTopic", "attendingPush");
+            consumer.subscribe("TestYq", "test");
 
             // 程序第一次启动从消息队列头获取数据
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
@@ -70,8 +67,5 @@ public class MessageConsumer  {
         }
     }
 
-//    @Override
-//    public void run(String... args) throws Exception {
-//        this.messageListener();
-//    }
+
 }

@@ -8,9 +8,9 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:oracle:thin:@10.1.10.131:30089:XE
-    username: USERROLE
-    password: USERROLE
+    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+    username: system
+    password: oracle
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driverClassName: oracle.jdbc.OracleDriver
@@ -50,7 +50,7 @@ server:
 apache:
   rocketmq:
     consumer:
-      consumerGroup: Consumer # 消费者的组名
+      PushConsumer: PushConsumer # 消费者的组名
     producer:
       producerGroup: Producer # 生产者的组名
-    namesrvAddr: 10.10.101.67:9876 # NameServer地址
+    namesrvAddr: 10.1.11.111:32426 # NameServer地址
