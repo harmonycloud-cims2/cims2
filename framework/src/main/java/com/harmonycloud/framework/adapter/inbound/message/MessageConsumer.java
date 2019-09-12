@@ -18,7 +18,7 @@ import java.util.List;
  * @Author: Vicky
  * @Date: 2019-09-04 17:55
  */
-@Service
+//@Service
 public class MessageConsumer  {
     private static final Logger logger = LoggerFactory.getLogger(MessageConsumer.class);
     /**

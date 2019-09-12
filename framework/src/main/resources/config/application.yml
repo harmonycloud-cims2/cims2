@@ -8,23 +8,26 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
-    username: system
-    password: oracle
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      driverClassName: oracle.jdbc.OracleDriver
-      pool:
-        initialSize: 5
-        maxActive: 10
-        minIdle: 5
-        maxWait: 10000
-        validationQuery: SELECT 1 FROM DUAL
-        testOnBorrow: true
+#    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+#    username: ROOT
+#    password: 123456
+    #schema: classpath:sql/data.sql
+    dynamic:
+      primary: write
+      datasource:
+        write:
+          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+          username: ROOT
+          password: 123456
+        read:
+          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+          username: XJOB
+          password: xjob
+
   #mongo
-#  data:
-#    mongodb:
-#      uri: mongodb://10.1.11.112:33001/test
+  data:
+    mongodb:
+      uri: mongodb://10.1.11.112:33001/test
 
 #mybatis-plus
 mybatis-plus:
@@ -54,3 +57,28 @@ apache:
     producer:
       producerGroup: Producer # 生产者的组名
     namesrvAddr: 10.1.11.111:32426 # NameServer地址
+
+
+sftp:
+  client:
+    protocol: sftp
+    # ip地址
+    host: 10.1.11.118
+    # 端口
+    port: 22
+    # 用户名
+    username: root
+    # 密码
+    password: 123456
+    # 根路径
+    root: /
+    # 密钥文件路径
+    privateKey:
+    # 密钥的密码
+    passphrase:
+    #
+    sessionStrictHostKeyChecking: no
+    # session连接超时时间
+    sessionConnectTimeout: 15000
+    # channel连接超时时间
+    channelConnectedTimeout: 15000

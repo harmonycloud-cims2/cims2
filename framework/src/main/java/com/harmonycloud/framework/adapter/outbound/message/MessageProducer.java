@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @Date: 2019-09-04 17:56
  */
 
-@Service
+//@Service
 public class MessageProducer {
 
     private static final Logger logger = LoggerFactory.getLogger(MessageProducer.class);
