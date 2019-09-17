@@ -41,7 +41,7 @@ public class MessageProducer {
 
         try {
             producer.start();
-            //test分支
+            //test分支hdkandksandkasd
             logger.info("-------->:producer starting....");
             Message message = new Message(topic, tags, body.getBytes(RemotingHelper.DEFAULT_CHARSET));
 
