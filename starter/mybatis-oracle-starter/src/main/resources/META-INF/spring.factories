@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.harmonycloud.common.database.DatabaseAutoConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=hk.health.common.database.DatabaseConfig

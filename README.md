@@ -41,6 +41,11 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2
 - 新建表：生成全部模版代码
 - 更新表：更新entity实体类
 
+### 测试
+
+#### Oracle数据库操作(dao层)的单元测试
+1. test下的resources/sql/data.sql，追加新的建表语句
+2. 单元测试类extends BaseMapperTest 
 
 #### Oracle读写分离
 在配置文件application.yml中配置动态数据源

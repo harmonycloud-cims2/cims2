@@ -8,28 +8,23 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-#    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
-#    username: ROOT
-#    password: 123456
-    #schema: classpath:sql/data.sql
-    dynamic:
-      primary: write
-      datasource:
-        write:
-          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
-          username: ROOT
-          password: 123456
-        read:
-          url: jdbc:oracle:thin:@10.1.11.111:1521:XE
-          username: XJOB
-          password: xjob
-
+    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
+    username: ROOT
+    password: 123456
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        globally_quoted_identifiers: true
+    hibernate:
+      ddl-auto:  validate
   #mongo
   data:
     mongodb:
       uri: mongodb://10.1.11.112:33001/test
 
-#mybatis-plus
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*/*.xml
   typeAliasesPackage: com.harmonycloud.*.adapter.outbound.database.entity

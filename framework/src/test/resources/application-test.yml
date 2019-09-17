@@ -1,24 +1,7 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@10.1.11.111:1521:XE
-    driverClassName: oracle.jdbc.OracleDriver
-    username: ROOT
-    password: 123456
-    #schema: classpath:sql/data.sql
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      pool:
-        initialSize: 5
-        maxActive: 10
-        minIdle: 5
-        maxWait: 1000
-        validationQuery: SELECT 1 FROM DUAL
-        testOnBorrow: true
-
-apache:
-  rocketmq:
-    consumer:
-      consumerGroup: Consumer # 消费者的组名
-    producer:
-      producerGroup: Producer # 生产者的组名
-    namesrvAddr: 10.1.11.111:32426 # NameServer地址
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=Oracle;
+    driverClassName: org.h2.Driver
+    username: test
+    password: test
+    schema: classpath:sql/data.sql
