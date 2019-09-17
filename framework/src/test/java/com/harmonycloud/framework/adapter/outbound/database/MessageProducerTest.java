@@ -24,7 +24,7 @@ public class MessageProducerTest {
     @Test
     public void send() throws Exception {
         messageProducer.producer("TestYq","test","hello world");
-//        messageConsumer.messageListener();
+        messageConsumer.messageListener();
     }
 
 }
